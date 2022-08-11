@@ -1,3 +1,54 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Walls.tres" type="TileSet" id=1]
+[ext_resource path="res://Resources/Floor.tres" type="TileSet" id=2]
+[ext_resource path="res://Resources/Stuff.tres" type="TileSet" id=3]
+[ext_resource path="res://Resources/Library.tres" type="TileSet" id=4]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Floor" type="TileMap" parent="."]
+mode = 1
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 256, 128 )
+format = 1
+tile_data = PoolIntArray( -327674, 4, 0, -262141, 53, 0, -262140, 53, 0, -262139, 53, 0, -262138, 53, 0, -262137, 53, 0, -262136, 53, 0, -196605, 53, 0, -196604, 18, 0, -196603, 53, 0, -196602, 53, 0, -196601, 4, 0, -131069, 53, 0, -131068, 53, 0, -131067, 53, 0, -131066, 53, 0, -131065, 53, 0, -131064, 4, 0, -65533, 53, 0, -65532, 20, 0, -65531, 53, 0, -65530, 53, 0, -65529, 53, 0, -65528, 4, 0, 2, 53, 0, 3, 53, 0, 4, 53, 0, 5, 53, 0, 6, 53, 0, 7, 53, 0, 8, 53, 0, 65542, 30, 0, 65543, 30, 0, 65544, 30, 0 )
+
+[node name="StuffBehind" type="TileMap" parent="."]
+mode = 1
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 256, 128 )
+format = 1
+tile_data = PoolIntArray( 65541, 120, 0 )
+
+[node name="Walls" type="TileMap" parent="."]
+mode = 1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 256, 128 )
+format = 1
+tile_data = PoolIntArray( -262142, 11, 0, -262141, 10, 0, -262140, 10, 0, -262139, 10, 0, -262138, 10, 0, -262137, 10, 0, -262136, 10, 0, -196606, 11, 0, -196600, 11, 0, -131070, 11, 0, -131064, 11, 0, -65534, 11, 0, -65528, 11, 0, 2, 11, 0, 8, 11, 0, 65538, 11, 0, 65544, 11, 0, 131075, 30, 0, 131076, 30, 0, 131077, 30, 0, 131078, 30, 0 )
+
+[node name="StuffInFront" type="TileMap" parent="."]
+mode = 1
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 256, 128 )
+format = 1
+tile_data = PoolIntArray( -262139, 1, 0, -65533, 8, 0 )
+
+[node name="Library" type="TileMap" parent="."]
+position = Vector2( 449, 118 )
+mode = 1
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 128, 64 )
+format = 1
+tile_data = PoolIntArray( -65531, 3, 0, -65530, 4, 0 )
+
+[node name="Floor6" type="TileMap" parent="."]
+mode = 1
+cell_size = Vector2( 256, 128 )
+format = 1
+
+[node name="Floor7" type="TileMap" parent="."]
+mode = 1
+cell_size = Vector2( 256, 128 )
+format = 1
