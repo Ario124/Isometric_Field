@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Resources/Walls.tres" type="TileSet" id=1]
 [ext_resource path="res://Resources/Floor.tres" type="TileSet" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Resources/Library.tres" type="TileSet" id=4]
 [ext_resource path="res://DisplayCaseWSword_E.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/UI/Globe_Transparent_4.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/Globe_Filled_4.png" type="Texture" id=8]
 
 [node name="Node2D" type="Node2D"]
 
@@ -62,3 +64,95 @@ position = Vector2( 877, 515 )
 
 [node name="DisplayCaseWSword_E" parent="Test" instance=ExtResource( 5 )]
 position = Vector2( 744, 511 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="HealthGlobe" type="Control" parent="GUI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -250.0
+margin_right = 250.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GlobeFull" type="TextureRect" parent="GUI/HealthGlobe"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -235.0
+margin_bottom = 235.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="TextureProgress" type="TextureProgress" parent="GUI/HealthGlobe/GlobeFull"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -105.0
+margin_top = -105.0
+margin_right = 105.0
+margin_bottom = 105.0
+rect_min_size = Vector2( 210, 210 )
+value = 75.0
+texture_progress = ExtResource( 8 )
+fill_mode = 3
+tint_progress = Color( 1, 0, 0, 0.729412 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="GUI/HealthGlobe/GlobeFull/TextureProgress"]
+
+[node name="GlobeTransparent" type="TextureRect" parent="GUI/HealthGlobe"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -235.0
+margin_bottom = 235.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="ManaGlobe" type="Control" parent="GUI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -250.0
+margin_top = -250.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GlobeFull" type="TextureRect" parent="GUI/ManaGlobe"]
+margin_right = 235.0
+margin_bottom = 235.0
+texture = ExtResource( 8 )
+expand = true
+
+[node name="TextureProgress" type="TextureProgress" parent="GUI/ManaGlobe/GlobeFull"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -105.0
+margin_top = -105.0
+margin_right = 105.0
+margin_bottom = 105.0
+rect_min_size = Vector2( 210, 210 )
+value = 75.0
+texture_progress = ExtResource( 8 )
+fill_mode = 3
+tint_progress = Color( 0, 0.109804, 1, 0.729412 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="GUI/ManaGlobe/GlobeFull/TextureProgress"]
+
+[node name="GlobeTransparent" type="TextureRect" parent="GUI/ManaGlobe"]
+margin_right = 235.0
+margin_bottom = 235.0
+texture = ExtResource( 7 )
+expand = true
