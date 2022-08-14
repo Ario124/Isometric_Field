@@ -4,7 +4,7 @@ var anim_direction = "S"
 var anim_mode = "Idle"
 var animation
 
-var spell = preload("res://Scenes/Spell.tscn")
+var spell = preload("res://Scenes/RangedSingleTargetSkill.tscn")
 var can_fire = true
 var rate_of_fire = 0.4
 var shooting = false
@@ -46,12 +46,12 @@ func SkillLoop():
 		shooting = true
 		speed = 0
 		get_node("TurnAxis").rotation = get_angle_to(get_global_mouse_position())
-		var spell_instance = spell.instance()
-		spell_instance.position = get_node("TurnAxis/CastPoint").get_global_position()
-		spell_instance.rotation = get_angle_to(get_global_mouse_position())
+		var skill_instance = spell.instance()
+		skill_instance.position = get_node("TurnAxis/CastPoint").get_global_position()
+		skill_instance.rotation = get_angle_to(get_global_mouse_position())
 		fire_direction = (get_angle_to(get_global_mouse_position())/3.14)*180
-		spell_instance.fire_direction = fire_direction
-		get_parent().add_child(spell_instance)
+		skill_instance.fire_direction = fire_direction
+		get_parent().add_child(skill_instance)
 		yield(get_tree().create_timer(rate_of_fire), "timeout")
 		can_fire = true
 		shooting = false

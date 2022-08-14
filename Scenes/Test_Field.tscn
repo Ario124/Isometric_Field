@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Resources/Walls.tres" type="TileSet" id=1]
 [ext_resource path="res://Resources/Floor.tres" type="TileSet" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Scenes/Library/StoneWall_N.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Library/Barrels_N.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Library/Barrels_E.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/UI/gray_bg.png" type="Texture" id=17]
 
 [node name="Node2D" type="Node2D"]
 
@@ -258,3 +259,33 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SkillBar" type="Control" parent="GUI"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 128.0
+margin_top = 120.0
+margin_right = 128.0
+margin_bottom = 120.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="GUI/SkillBar"]
+margin_right = 500.0
+margin_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource( 17 )
+expand = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/SkillBar/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -10.0
+
+[node name="SelectedSkill" type="TextureRect" parent="GUI/SkillBar/Background/HBoxContainer"]
+margin_bottom = 66.0
