@@ -456,6 +456,8 @@ collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 0, -21 )
+scale = Vector2( 1.44474, 1.49662 )
 polygon = PoolVector2Array( 1, 12, -13, 16, -20, 27, -14, 37, 0, 42, 15, 35, 16, 24, 11, 16 )
 
 [node name="Sprite" type="Sprite" parent="."]

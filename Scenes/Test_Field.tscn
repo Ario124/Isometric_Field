@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Resources/Walls.tres" type="TileSet" id=1]
 [ext_resource path="res://Resources/Floor.tres" type="TileSet" id=2]
@@ -9,6 +9,11 @@
 [ext_resource path="res://Assets/UI/Globe_Transparent_4.png" type="Texture" id=7]
 [ext_resource path="res://Assets/UI/Globe_Filled_4.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Jayce.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Library/StoneWallCorner_N.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Library/StoneWall_E.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Library/StoneWallCorner_S.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Library/BookCaseBooks_S.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Library/StoneWall_N.tscn" type="PackedScene" id=14]
 
 [node name="Node2D" type="Node2D"]
 
@@ -20,6 +25,7 @@ format = 1
 tile_data = PoolIntArray( -327674, 4, 0, -262141, 53, 0, -262140, 53, 0, -262139, 53, 0, -262138, 53, 0, -262137, 53, 0, -262136, 53, 0, -196605, 53, 0, -196604, 18, 0, -196603, 53, 0, -196602, 53, 0, -196601, 4, 0, -131069, 53, 0, -131068, 53, 0, -131067, 53, 0, -131066, 53, 0, -131065, 53, 0, -131064, 4, 0, -65533, 53, 0, -65532, 20, 0, -65531, 53, 0, -65530, 53, 0, -65529, 53, 0, -65528, 4, 0, 2, 53, 0, 3, 53, 0, 4, 53, 0, 5, 53, 0, 6, 53, 0, 7, 53, 0, 8, 53, 0, 65542, 30, 0, 65543, 30, 0, 65544, 30, 0 )
 
 [node name="StuffBehind" type="TileMap" parent="."]
+visible = false
 mode = 1
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 256, 128 )
@@ -27,6 +33,7 @@ format = 1
 tile_data = PoolIntArray( 65541, 120, 0 )
 
 [node name="Walls" type="TileMap" parent="."]
+visible = false
 mode = 1
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 256, 128 )
@@ -34,6 +41,7 @@ format = 1
 tile_data = PoolIntArray( -262142, 11, 0, -262141, 10, 0, -262140, 10, 0, -262139, 10, 0, -262138, 10, 0, -262137, 10, 0, -262136, 10, 0, -196606, 11, 0, -196600, 11, 0, -131070, 11, 0, -131064, 11, 0, -65534, 11, 0, -65528, 11, 0, 2, 11, 0, 8, 11, 0, 65538, 11, 0, 65544, 11, 0, 131075, 30, 0, 131076, 30, 0, 131077, 30, 0, 131078, 30, 0 )
 
 [node name="StuffInFront" type="TileMap" parent="."]
+visible = false
 mode = 1
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 256, 128 )
@@ -41,6 +49,7 @@ format = 1
 tile_data = PoolIntArray( -262139, 1, 0, -65533, 8, 0 )
 
 [node name="Library" type="TileMap" parent="."]
+visible = false
 position = Vector2( 449, 118 )
 mode = 1
 tile_set = ExtResource( 4 )
@@ -60,14 +69,55 @@ format = 1
 
 [node name="Test" type="YSort" parent="."]
 
-[node name="Player" parent="Test" instance=ExtResource( 6 )]
+[node name="Walls" type="YSort" parent="Test"]
+
+[node name="StoneWallCorner_N" parent="Test/Walls" instance=ExtResource( 10 )]
+position = Vector2( 1280, 840 )
+
+[node name="StoneWallCorner_S" parent="Test/Walls" instance=ExtResource( 12 )]
+position = Vector2( 896, 320 )
+
+[node name="StoneWall_E" parent="Test/Walls" instance=ExtResource( 11 )]
+position = Vector2( 780, 360 )
+
+[node name="StoneWall_E2" parent="Test/Walls" instance=ExtResource( 11 )]
+position = Vector2( 660, 420 )
+
+[node name="StoneWall_E3" parent="Test/Walls" instance=ExtResource( 11 )]
+position = Vector2( 540, 480 )
+
+[node name="StoneWall_N" parent="Test/Walls" instance=ExtResource( 14 )]
+position = Vector2( 1249, 431 )
+
+[node name="StoneWall_N2" parent="Test/Walls" instance=ExtResource( 14 )]
+position = Vector2( 1377, 496 )
+
+[node name="StoneWall_N3" parent="Test/Walls" instance=ExtResource( 14 )]
+position = Vector2( 1121, 367 )
+
+[node name="Player" type="YSort" parent="Test"]
+
+[node name="Player" parent="Test/Player" instance=ExtResource( 6 )]
 position = Vector2( 877, 515 )
 
-[node name="DisplayCaseWSword_E" parent="Test" instance=ExtResource( 5 )]
-position = Vector2( 744, 511 )
+[node name="Library" type="YSort" parent="Test"]
+position = Vector2( -192, 120 )
 
-[node name="Jayce" parent="Test" instance=ExtResource( 9 )]
+[node name="BookCaseBooks_S" parent="Test/Library" instance=ExtResource( 13 )]
+position = Vector2( 1131, 596 )
+
+[node name="BookCaseBooks_S2" parent="Test/Library" instance=ExtResource( 13 )]
+position = Vector2( 1060, 560 )
+
+[node name="Enemies" type="YSort" parent="Test"]
+
+[node name="Jayce" parent="Test/Enemies" instance=ExtResource( 9 )]
 position = Vector2( 743, 698 )
+
+[node name="Props" type="YSort" parent="Test"]
+
+[node name="DisplayCaseWSword_E" parent="Test/Props" instance=ExtResource( 5 )]
+position = Vector2( 744, 511 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
