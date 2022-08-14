@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Resources/Walls.tres" type="TileSet" id=1]
 [ext_resource path="res://Resources/Floor.tres" type="TileSet" id=2]
 [ext_resource path="res://Resources/Stuff.tres" type="TileSet" id=3]
 [ext_resource path="res://Resources/Library.tres" type="TileSet" id=4]
-[ext_resource path="res://DisplayCaseWSword_E.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/DisplayCaseWSword_E.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/UI/Globe_Transparent_4.png" type="Texture" id=7]
 [ext_resource path="res://Assets/UI/Globe_Filled_4.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/Jayce.tscn" type="PackedScene" id=9]
 
 [node name="Node2D" type="Node2D"]
 
@@ -64,6 +65,9 @@ position = Vector2( 877, 515 )
 
 [node name="DisplayCaseWSword_E" parent="Test" instance=ExtResource( 5 )]
 position = Vector2( 744, 511 )
+
+[node name="Jayce" parent="Test" instance=ExtResource( 9 )]
+position = Vector2( 743, 698 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 

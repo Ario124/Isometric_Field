@@ -451,6 +451,8 @@ tracks/0/keys = {
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 0, -25 )
+collision_layer = 2
+collision_mask = 5
 script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -491,3 +493,8 @@ anims/Walk_S = SubResource( 21 )
 anims/Walk_SE = SubResource( 22 )
 anims/Walk_SW = SubResource( 20 )
 anims/Walk_W = SubResource( 3 )
+
+[node name="TurnAxis" type="Position2D" parent="."]
+
+[node name="CastPoint" type="Position2D" parent="TurnAxis"]
+position = Vector2( 45, 0 )
