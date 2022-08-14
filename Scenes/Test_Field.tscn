@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Resources/Walls.tres" type="TileSet" id=1]
 [ext_resource path="res://Resources/Floor.tres" type="TileSet" id=2]
@@ -14,15 +14,19 @@
 [ext_resource path="res://Scenes/Library/StoneWallCorner_S.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Library/BookCaseBooks_S.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Library/StoneWall_N.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Library/Barrels_N.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Library/Barrels_E.tscn" type="PackedScene" id=16]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Floor" type="TileMap" parent="."]
+position = Vector2( 455, 171 )
+scale = Vector2( 0.5, 0.5 )
 mode = 1
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 256, 128 )
 format = 1
-tile_data = PoolIntArray( -327674, 4, 0, -262141, 53, 0, -262140, 53, 0, -262139, 53, 0, -262138, 53, 0, -262137, 53, 0, -262136, 53, 0, -196605, 53, 0, -196604, 18, 0, -196603, 53, 0, -196602, 53, 0, -196601, 4, 0, -131069, 53, 0, -131068, 53, 0, -131067, 53, 0, -131066, 53, 0, -131065, 53, 0, -131064, 4, 0, -65533, 53, 0, -65532, 20, 0, -65531, 53, 0, -65530, 53, 0, -65529, 53, 0, -65528, 4, 0, 2, 53, 0, 3, 53, 0, 4, 53, 0, 5, 53, 0, 6, 53, 0, 7, 53, 0, 8, 53, 0, 65542, 30, 0, 65543, 30, 0, 65544, 30, 0 )
+tile_data = PoolIntArray( -458750, 5, 0, -458749, 5, 0, -458748, 5, 0, -458747, 5, 0, -458746, 5, 0, -393215, 5, 0, -393214, 5, 0, -393213, 5, 0, -393212, 5, 0, -393211, 5, 0, -393210, 5, 0, -393209, 5, 0, -393208, 5, 0, -393207, 5, 0, -327679, 5, 0, -327678, 5, 0, -327675, 5, 0, -327674, 5, 0, -327673, 5, 0, -327672, 5, 0, -327671, 5, 0, -327670, 5, 0, -327669, 5, 0, -262143, 5, 0, -262142, 5, 0, -262141, 53, 0, -262140, 53, 0, -262139, 53, 0, -262138, 53, 0, -262137, 53, 0, -262136, 5, 0, -262135, 5, 0, -262134, 5, 0, -262133, 5, 0, -262132, 5, 0, -196608, 5, 0, -196607, 5, 0, -196606, 5, 0, -196605, 53, 0, -196604, 18, 0, -196603, 53, 0, -196602, 53, 0, -196601, 52, 0, -196599, 5, 0, -196598, 5, 0, -196597, 5, 0, -196596, 5, 0, -131072, 5, 0, -131071, 5, 0, -131070, 5, 0, -131069, 53, 0, -131068, 53, 0, -131067, 53, 0, -131066, 53, 0, -131065, 53, 0, -131064, 52, 0, -131063, 9, 0, -131062, 5, 0, -65536, 5, 0, -65535, 5, 0, -65534, 5, 0, -65533, 53, 0, -65532, 20, 0, -65531, 53, 0, -65530, 53, 0, -65529, 53, 0, -65528, 52, 0, -65527, 52, 0, -65526, 5, 0, -65525, 50, 0, 1, 54, 0, 2, 54, 0, 3, 53, 0, 4, 54, 0, 5, 53, 0, 6, 53, 0, 7, 53, 0, 8, 53, 0, 9, 50, 0, 10, 5, 0, 11, 55, 0, 65537, 54, 0, 65538, 53, 0, 65539, 53, 0, 65540, 54, 0, 65541, 54, 0, 65542, 54, 0, 65543, 54, 0, 65544, 54, 0, 65545, 5, 0, 65546, 5, 0, 65547, 55, 0, 196607, 10, 0, 131072, 54, 0, 131073, 54, 0, 131074, 53, 0, 131075, 23, 0, 131076, 53, 0, 131077, 54, 0, 131078, 54, 0, 131079, 54, 0, 131080, 54, 0, 131081, 54, 0, 131082, 5, 0, 131083, 5, 0, 196609, 54, 0, 196610, 53, 0, 196611, 23, 0, 196612, 53, 0, 196613, 5, 0, 196614, 5, 0, 196615, 5, 0, 196616, 5, 0, 196617, 5, 0, 196618, 8, 0, 196619, 5, 0, 262145, 54, 0, 262146, 53, 0, 262147, 23, 0, 262148, 23, 0, 262149, 23, 0, 262150, 23, 0, 262151, 53, 0, 262152, 53, 0, 262153, 5, 0, 262154, 5, 0, 262155, 13, 0, 327682, 54, 0, 327683, 54, 0, 327684, 54, 0, 327685, 5, 0, 327686, 5, 0, 327687, 23, 0, 327688, 5, 0, 327689, 16, 0, 327690, 18, 0, 393219, 54, 0, 393220, 54, 0, 393225, 5, 0, 458761, 5, 0 )
 
 [node name="StuffBehind" type="TileMap" parent="."]
 visible = false
@@ -70,9 +74,11 @@ format = 1
 [node name="Test" type="YSort" parent="."]
 
 [node name="Walls" type="YSort" parent="Test"]
+position = Vector2( 466, 175 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="StoneWallCorner_N" parent="Test/Walls" instance=ExtResource( 10 )]
-position = Vector2( 1280, 840 )
+position = Vector2( 1308, 820 )
 
 [node name="StoneWallCorner_S" parent="Test/Walls" instance=ExtResource( 12 )]
 position = Vector2( 896, 320 )
@@ -80,17 +86,47 @@ position = Vector2( 896, 320 )
 [node name="StoneWall_E" parent="Test/Walls" instance=ExtResource( 11 )]
 position = Vector2( 780, 360 )
 
+[node name="StoneWall_E4" parent="Test/Walls" instance=ExtResource( 11 )]
+position = Vector2( 1528, 752 )
+
+[node name="StoneWall_E5" parent="Test/Walls" instance=ExtResource( 11 )]
+position = Vector2( 1654, 688 )
+
 [node name="StoneWall_E2" parent="Test/Walls" instance=ExtResource( 11 )]
 position = Vector2( 660, 420 )
 
 [node name="StoneWall_E3" parent="Test/Walls" instance=ExtResource( 11 )]
 position = Vector2( 540, 480 )
 
+[node name="StoneWall_E6" parent="Test/Walls" instance=ExtResource( 11 )]
+position = Vector2( 556, 880 )
+
+[node name="StoneWall_E7" parent="Test/Walls" instance=ExtResource( 11 )]
+position = Vector2( 682, 818 )
+
 [node name="StoneWall_N" parent="Test/Walls" instance=ExtResource( 14 )]
 position = Vector2( 1249, 431 )
 
 [node name="StoneWall_N2" parent="Test/Walls" instance=ExtResource( 14 )]
 position = Vector2( 1377, 496 )
+
+[node name="StoneWall_N6" parent="Test/Walls" instance=ExtResource( 14 )]
+position = Vector2( 1058, 690 )
+
+[node name="StoneWall_N7" parent="Test/Walls" instance=ExtResource( 14 )]
+position = Vector2( 1186, 755 )
+
+[node name="StoneWall_N8" parent="Test/Walls" instance=ExtResource( 14 )]
+position = Vector2( 300, 830 )
+
+[node name="StoneWall_N9" parent="Test/Walls" instance=ExtResource( 14 )]
+position = Vector2( 428, 896 )
+
+[node name="StoneWall_N4" parent="Test/Walls" instance=ExtResource( 14 )]
+position = Vector2( 1506, 562 )
+
+[node name="StoneWall_N5" parent="Test/Walls" instance=ExtResource( 14 )]
+position = Vector2( 1634, 628 )
 
 [node name="StoneWall_N3" parent="Test/Walls" instance=ExtResource( 14 )]
 position = Vector2( 1121, 367 )
@@ -101,7 +137,8 @@ position = Vector2( 1121, 367 )
 position = Vector2( 877, 515 )
 
 [node name="Library" type="YSort" parent="Test"]
-position = Vector2( -192, 120 )
+position = Vector2( 462, 176 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="BookCaseBooks_S" parent="Test/Library" instance=ExtResource( 13 )]
 position = Vector2( 1131, 596 )
@@ -115,9 +152,17 @@ position = Vector2( 1060, 560 )
 position = Vector2( 743, 698 )
 
 [node name="Props" type="YSort" parent="Test"]
+position = Vector2( 438, 194 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="DisplayCaseWSword_E" parent="Test/Props" instance=ExtResource( 5 )]
 position = Vector2( 744, 511 )
+
+[node name="Barrels_E" parent="Test/Props" instance=ExtResource( 16 )]
+position = Vector2( 1190, 828 )
+
+[node name="Barrels_N" parent="Test/Props" instance=ExtResource( 15 )]
+position = Vector2( 130, 566 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -210,3 +255,6 @@ margin_right = 235.0
 margin_bottom = 235.0
 texture = ExtResource( 7 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

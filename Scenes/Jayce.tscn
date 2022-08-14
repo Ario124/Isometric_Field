@@ -1,21 +1,44 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Enemies/skeleton_knight.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Jayce.gd" type="Script" id=2]
 
-[node name="Jayce" type="KinematicBody2D"]
+[sub_resource type="Animation" id=1]
+resource_name = "Idle_SW"
+length = 1.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 196, 197, 198, 199, 198, 197 ]
+}
+
+[node name="Jayce" type="KinematicBody2D" groups=["Enemies"]]
 position = Vector2( 0, -25 )
 collision_layer = 4
 collision_mask = 7
+script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1, -5 )
+scale = Vector2( 1.14338, 1.1125 )
 polygon = PoolVector2Array( 0, 13, -14, 16, -21, 25, -18, 32, -13, 38, 0, 38, 9, 34, 13, 25, 9, 18 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 28
 vframes = 8
+frame = 197
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Idle_SW = SubResource( 1 )
 
 [node name="HPBar" type="TextureProgress" parent="."]
 margin_right = 40.0

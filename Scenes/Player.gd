@@ -9,7 +9,7 @@ var can_fire = true
 var rate_of_fire = 0.4
 var shooting = false
 
-
+var fire_direction
 var max_speed = 250
 var speed = 0
 var acceleration = 100
@@ -49,6 +49,8 @@ func SkillLoop():
 		var spell_instance = spell.instance()
 		spell_instance.position = get_node("TurnAxis/CastPoint").get_global_position()
 		spell_instance.rotation = get_angle_to(get_global_mouse_position())
+		fire_direction = (get_angle_to(get_global_mouse_position())/3.14)*180
+		spell_instance.fire_direction = fire_direction
 		get_parent().add_child(spell_instance)
 		yield(get_tree().create_timer(rate_of_fire), "timeout")
 		can_fire = true
@@ -76,7 +78,25 @@ func MovementLoop():
 
 func AnimationLoop():
 	if shooting == true:
-		anim_mode = "Idle"
+		anim_mode = "Shoot"
+		if fire_direction <= 15 and fire_direction >= -15:
+			animation = "E"
+		elif fire_direction <= 60 and fire_direction >= 15:
+			animation = "SE"
+		elif fire_direction <= 120 and fire_direction >= 60:
+			animation = "S"
+		elif fire_direction <= 165 and fire_direction >= 120:
+			animation = "SW"
+		elif fire_direction >= -60 and fire_direction <= -15:
+			animation = "NE"
+		elif fire_direction >= -120 and fire_direction <= -60:
+			animation = "N"
+		elif fire_direction >= -165 and fire_direction <= -120:
+			animation = "NW"
+		elif fire_direction <= -165 and fire_direction >= 165:
+			animation = "W"
+
+
 	else:
 		match move_direction:
 			Vector2(-1,0):
@@ -124,8 +144,8 @@ func AnimationLoop():
 #
 #		anim_mode = "Melee"
 
-	animation = anim_mode + "_" + anim_direction
-	get_node("AnimationPlayer").play(animation)
+#	animation = anim_mode + "_" + anim_direction
+#	get_node("AnimationPlayer").play(animation)
 
 
 
