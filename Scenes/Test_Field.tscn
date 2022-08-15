@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Resources/Walls.tres" type="TileSet" id=1]
 [ext_resource path="res://Resources/Floor.tres" type="TileSet" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Scenes/Library/Barrels_N.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Library/Barrels_E.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/UI/gray_bg.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/GUI.gd" type="Script" id=18]
 
 [node name="Node2D" type="Node2D"]
 
@@ -166,6 +167,7 @@ position = Vector2( 1190, 828 )
 position = Vector2( 130, 566 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
+script = ExtResource( 18 )
 
 [node name="HealthGlobe" type="Control" parent="GUI"]
 anchor_top = 1.0
@@ -265,10 +267,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 128.0
-margin_top = 120.0
-margin_right = 128.0
-margin_bottom = 120.0
+margin_left = -221.0
+margin_top = -77.0
+margin_right = -221.0
+margin_bottom = -77.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -286,6 +288,94 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
 margin_right = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="SelectedSkill" type="TextureRect" parent="GUI/SkillBar/Background/HBoxContainer"]
+modulate = Color( 0.643137, 0.0470588, 0.0470588, 1 )
+self_modulate = Color( 0.913725, 0.0235294, 0.0235294, 1 )
 margin_bottom = 66.0
+size_flags_vertical = 5
+texture = ExtResource( 17 )
+expand = true
+
+[node name="TextureRect" type="TextureRect" parent="GUI/SkillBar/Background/HBoxContainer/SelectedSkill"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Shortcut1" type="TextureRect" parent="GUI/SkillBar/Background/HBoxContainer"]
+modulate = Color( 0.643137, 0.0470588, 0.0470588, 1 )
+self_modulate = Color( 0.913725, 0.0235294, 0.0235294, 1 )
+margin_left = 4.0
+margin_right = 4.0
+margin_bottom = 66.0
+size_flags_vertical = 5
+texture = ExtResource( 17 )
+expand = true
+
+[node name="TextureButton" type="TextureButton" parent="GUI/SkillBar/Background/HBoxContainer/Shortcut1" groups=["Shortcuts"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shortcut2" type="TextureRect" parent="GUI/SkillBar/Background/HBoxContainer"]
+modulate = Color( 0.643137, 0.0470588, 0.0470588, 1 )
+self_modulate = Color( 0.913725, 0.0235294, 0.0235294, 1 )
+margin_left = 8.0
+margin_right = 8.0
+margin_bottom = 66.0
+size_flags_vertical = 5
+texture = ExtResource( 17 )
+expand = true
+
+[node name="TextureButton" type="TextureButton" parent="GUI/SkillBar/Background/HBoxContainer/Shortcut2" groups=["Shortcuts"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shortcut3" type="TextureRect" parent="GUI/SkillBar/Background/HBoxContainer"]
+modulate = Color( 0.643137, 0.0470588, 0.0470588, 1 )
+self_modulate = Color( 0.913725, 0.0235294, 0.0235294, 1 )
+margin_left = 12.0
+margin_right = 12.0
+margin_bottom = 66.0
+size_flags_vertical = 5
+texture = ExtResource( 17 )
+expand = true
+
+[node name="TextureButton" type="TextureButton" parent="GUI/SkillBar/Background/HBoxContainer/Shortcut3" groups=["Shortcuts"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shortcut4" type="TextureRect" parent="GUI/SkillBar/Background/HBoxContainer"]
+modulate = Color( 0.643137, 0.0470588, 0.0470588, 1 )
+self_modulate = Color( 0.913725, 0.0235294, 0.0235294, 1 )
+margin_left = 16.0
+margin_right = 16.0
+margin_bottom = 66.0
+size_flags_vertical = 5
+texture = ExtResource( 17 )
+expand = true
+
+[node name="TextureButton" type="TextureButton" parent="GUI/SkillBar/Background/HBoxContainer/Shortcut4" groups=["Shortcuts"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
