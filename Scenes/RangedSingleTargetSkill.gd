@@ -4,7 +4,7 @@ var projectile_speed = 400
 var life_time = 3
 var fire_direction
 var animation
-var damage = 50
+var damage = 10
 
 
 func _ready():
