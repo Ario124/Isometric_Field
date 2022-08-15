@@ -4,6 +4,8 @@ var projectile_speed = 400
 var life_time = 3
 var fire_direction
 var animation
+var damage = 50
+
 
 func _ready():
 	apply_impulse(Vector2(), Vector2(projectile_speed, 0).rotated(rotation))
@@ -44,6 +46,7 @@ func SelfDestruct():
 
 
 func _on_Spell_body_entered(body):
+	get_node("CollisionPolygon2D").set_deferred("disabled", true)
 	if body.is_in_group("Enemies"):
-		print("Hit!")
+		body.OnHit(damage)
 	self.hide()

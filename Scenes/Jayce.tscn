@@ -1,7 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Enemies/skeleton_knight.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Jayce.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Death_SW"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 216, 217, 218, 219, 220, 221, 222, 223 ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle_SW"
@@ -35,9 +51,10 @@ polygon = PoolVector2Array( 0, 13, -14, 16, -21, 25, -18, 32, -13, 38, 0, 38, 9,
 texture = ExtResource( 1 )
 hframes = 28
 vframes = 8
-frame = 197
+frame = 216
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Death_SW = SubResource( 2 )
 anims/Idle_SW = SubResource( 1 )
 
 [node name="HPBar" type="TextureProgress" parent="."]

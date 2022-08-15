@@ -263,6 +263,7 @@ __meta__ = {
 }
 
 [node name="SkillBar" type="Control" parent="GUI"]
+visible = false
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
