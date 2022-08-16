@@ -13,8 +13,8 @@ var shooting = false
 var shooting2 = false
 
 var fire_direction
-var max_speed = 450
-var speed = 350
+var max_speed = 350
+var speed = 250
 var acceleration = 100
 var move_direction = Vector2(0,0)
 var moving = false
@@ -72,6 +72,9 @@ func LavaBomb():
 		can_fire = true
 		shooting2 = false
 
+
+func OnHeal(heal_amount):
+	pass
 
 
 func Attack():

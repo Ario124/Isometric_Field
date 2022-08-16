@@ -153,6 +153,12 @@ position = Vector2( 1060, 560 )
 [node name="Jayce" parent="Test/Enemies" instance=ExtResource( 9 )]
 position = Vector2( 743, 698 )
 
+[node name="Jack" parent="Test/Enemies" instance=ExtResource( 9 )]
+position = Vector2( 686, 693 )
+
+[node name="Jason" parent="Test/Enemies" instance=ExtResource( 9 )]
+position = Vector2( 414, 579 )
+
 [node name="Props" type="YSort" parent="Test"]
 position = Vector2( 438, 194 )
 scale = Vector2( 0.5, 0.5 )
