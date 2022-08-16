@@ -125,8 +125,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=8]
 resource_name = "Fire_W"
-length = 0.8
+length = 1.5
 loop = true
+step = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Projectile:frame")
 tracks/0/interp = 1
@@ -134,7 +135,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
@@ -157,7 +158,6 @@ polygon = PoolVector2Array( 31.4893, 0.857144, 7, 7, 7, -3 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 8
-frame = 32
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Fire_E = SubResource( 1 )

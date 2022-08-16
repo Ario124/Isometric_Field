@@ -34,7 +34,7 @@ func SetAnimation():
 	elif fire_direction >= -165 and fire_direction <= -120:
 		animation = "Fire_NW"
 		get_node("Projectile").rotation_degrees += 150
-	elif fire_direction <= -165 and fire_direction >= 165:
+	elif fire_direction <= -165 or fire_direction >= 165:
 		animation = "Fire_W"
 		get_node("Projectile").rotation_degrees -= 180
 	
