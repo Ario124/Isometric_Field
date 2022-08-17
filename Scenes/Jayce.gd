@@ -6,6 +6,7 @@ var max_hp = 200
 var current_hp
 var percentage_hp = 100
 var can_heal = true
+var dead = false
 
 
 func _ready():
@@ -13,13 +14,17 @@ func _ready():
 	current_hp = max_hp
 
 func _process(delta):
-	if percentage_hp <= 50 and can_heal == true:
+	if percentage_hp <= 90 and can_heal == true:
 		can_heal = false
-		var skill = load("res://Assets/Skills/SingleTargetHeal.tscn")
-		var skill_instance = skill.instance()
-		add_child(skill_instance)
-		yield(get_tree().create_timer(1), "timeout")
-		can_heal = true
+		yield(get_tree().create_timer(0.35), "timeout")
+		if dead == true:
+			pass
+		else:
+			var skill = load("res://Assets/Skills/SingleTargetHeal.tscn")
+			var skill_instance = skill.instance()
+			add_child(skill_instance)
+			yield(get_tree().create_timer(1), "timeout")
+			can_heal = true
 
 
 
@@ -50,6 +55,7 @@ func HPBarUpdate():
 
 
 func OnDeath():
+	dead = true
 	get_node("CollisionPolygon2D").set_deferred("disabled", true)
 	get_node("AnimationPlayer").play("Death_SW")
 	hp_bar.hide()

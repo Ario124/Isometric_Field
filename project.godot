@@ -13,6 +13,10 @@ config_version=4
 config/name="Isometric_Field"
 config/icon="res://icon.png"
 
+[autoload]
+
+Server="*res://Scenes/Singletons/Server.gd"
+
 [input]
 
 w={

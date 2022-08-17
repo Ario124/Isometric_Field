@@ -23,7 +23,7 @@ var movement = Vector2()
 
 var attacking = false
 var attack_direction
-
+var selected_skill
 
 func _unhandled_input(event):
 	if event.is_action_pressed('Click'):
