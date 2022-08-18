@@ -5,6 +5,7 @@ var life_time = 3
 var fire_direction
 var animation
 var damage = 10
+var skill_name = "Ice_Spear"
 
 
 func _ready():

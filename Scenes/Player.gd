@@ -4,7 +4,6 @@ var anim_direction = "S"
 var anim_mode = "Idle"
 var animation
 
-var spell = preload("res://Scenes/RangedSingleTargetSkill.tscn")
 var lava_bomb = preload("res://Scenes/RangedAOESkill.tscn")
 var can_fire = true
 var rate_of_fire = 0.4
@@ -38,7 +37,7 @@ func _unhandled_input(event):
 func _process(delta):
 	AnimationLoop()
 	SkillLoop()
-	LavaBomb()
+#	LavaBomb()
 
 
 func _physics_process(delta):
@@ -48,29 +47,48 @@ func SkillLoop():
 	if Input.is_action_pressed("Shoot") and can_fire == true:
 		can_fire = false
 		shooting = true
-		get_node("TurnAxis").rotation = get_angle_to(get_global_mouse_position())
-		var skill_instance = spell.instance()
-		skill_instance.position = get_node("TurnAxis/CastPoint").get_global_position()
-		skill_instance.rotation = get_angle_to(get_global_mouse_position())
 		fire_direction = (get_angle_to(get_global_mouse_position())/3.14)*180
-		skill_instance.fire_direction = fire_direction
-		get_parent().add_child(skill_instance)
-		yield(get_tree().create_timer(rate_of_fire), "timeout")
-		can_fire = true
-		shooting = false
-
-func LavaBomb():
-	if Input.is_action_pressed("ShootLava") and can_fire == true:
-		can_fire = false
-		shooting2 = true
 		get_node("TurnAxis").rotation = get_angle_to(get_global_mouse_position())
-		
-		var skill_instance = lava_bomb.instance()
-		skill_instance.position = get_global_mouse_position()
-		get_parent().add_child(skill_instance)
-		yield(get_tree().create_timer(rate_of_fire2), "timeout")
-		can_fire = true
-		shooting2 = false
+		match selected_skill:
+			"Fireball", "Ice_Spear":
+				var skill = load("res://Scenes/RangedSingleTargetSkill.tscn")
+				var skill_instance = skill.instance()
+				skill_instance.skill_name = selected_skill
+				skill_instance.fire_direction = fire_direction
+				skill_instance.rotation = get_angle_to(get_global_mouse_position())
+				skill_instance.position = get_node("TurnAxis/CastPoint").get_global_position()
+				get_parent().add_child(skill_instance)
+				
+			"Lava_Bomb":
+				var skill = load("res://Scenes/RangedAOESkill.tscn")
+				var skill_instance = skill.instance()
+				skill_instance.skill_name = selected_skill
+				skill_instance.position = get_global_mouse_position()
+				get_parent().add_child(skill_instance)
+				
+#		get_node("TurnAxis").rotation = get_angle_to(get_global_mouse_position())
+#		var skill_instance = spell.instance()
+#		skill_instance.position = get_node("TurnAxis/CastPoint").get_global_position()
+#		skill_instance.rotation = get_angle_to(get_global_mouse_position())
+#		fire_direction = (get_angle_to(get_global_mouse_position())/3.14)*180
+#		skill_instance.fire_direction = fire_direction
+#		get_parent().add_child(skill_instance)
+#		yield(get_tree().create_timer(rate_of_fire), "timeout")
+#		can_fire = true
+#		shooting = false
+
+#func LavaBomb():
+#	if Input.is_action_pressed("ShootLava") and can_fire == true:
+#		can_fire = false
+#		shooting2 = true
+#		get_node("TurnAxis").rotation = get_angle_to(get_global_mouse_position())
+#
+#		var skill_instance = lava_bomb.instance()
+#		skill_instance.position = get_global_mouse_position()
+#		get_parent().add_child(skill_instance)
+#		yield(get_tree().create_timer(rate_of_fire2), "timeout")
+#		can_fire = true
+#		shooting2 = false
 
 
 func OnHeal(heal_amount):

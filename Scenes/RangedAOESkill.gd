@@ -5,6 +5,7 @@ var damage = 30
 var animation = "Lava_Bomb"
 var damage_delay_time = 0.3
 var remove_delay_time = 3
+var skill_name ="Lava_Bomb"
 
 func _ready():
 	AOEAttack()
