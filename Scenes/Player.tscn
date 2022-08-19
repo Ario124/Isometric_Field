@@ -643,4 +643,4 @@ anims/Walk_W = SubResource( 3 )
 [node name="TurnAxis" type="Position2D" parent="."]
 
 [node name="CastPoint" type="Position2D" parent="TurnAxis"]
-position = Vector2( 45, 0 )
+position = Vector2( 55, 0 )

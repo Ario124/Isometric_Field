@@ -56,13 +56,16 @@ expand = true
 
 [node name="Shortcut2" type="TextureRect" parent="Skill_Bar/Background"]
 self_modulate = Color( 0.670588, 0.494118, 0.494118, 1 )
-margin_left = 100.0
+margin_left = 200.0
 margin_top = 10.0
-margin_right = 160.0
+margin_right = 260.0
 margin_bottom = 70.0
 size_flags_vertical = 5
 texture = ExtResource( 1 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureButton" type="TextureButton" parent="Skill_Bar/Background/Shortcut2" groups=["Shortcuts"]]
 anchor_right = 1.0
@@ -71,9 +74,9 @@ expand = true
 
 [node name="Shortcut3" type="TextureRect" parent="Skill_Bar/Background"]
 self_modulate = Color( 0.670588, 0.494118, 0.494118, 1 )
-margin_left = 200.0
+margin_left = 300.0
 margin_top = 10.0
-margin_right = 260.0
+margin_right = 360.0
 margin_bottom = 70.0
 size_flags_vertical = 5
 texture = ExtResource( 1 )
@@ -86,9 +89,9 @@ expand = true
 
 [node name="Shortcut4" type="TextureRect" parent="Skill_Bar/Background"]
 self_modulate = Color( 0.670588, 0.494118, 0.494118, 1 )
-margin_left = 300.0
+margin_left = 400.0
 margin_top = 10.0
-margin_right = 360.0
+margin_right = 460.0
 margin_bottom = 70.0
 size_flags_vertical = 5
 texture = ExtResource( 1 )
@@ -101,9 +104,9 @@ expand = true
 
 [node name="Shortcut5" type="TextureRect" parent="Skill_Bar/Background"]
 self_modulate = Color( 0.670588, 0.494118, 0.494118, 1 )
-margin_left = 400.0
+margin_left = 500.0
 margin_top = 10.0
-margin_right = 460.0
+margin_right = 560.0
 margin_bottom = 70.0
 size_flags_vertical = 5
 texture = ExtResource( 1 )
@@ -116,9 +119,9 @@ expand = true
 
 [node name="Shortcut6" type="TextureRect" parent="Skill_Bar/Background"]
 self_modulate = Color( 0.670588, 0.494118, 0.494118, 1 )
-margin_left = 500.0
+margin_left = 600.0
 margin_top = 10.0
-margin_right = 560.0
+margin_right = 660.0
 margin_bottom = 70.0
 size_flags_vertical = 5
 texture = ExtResource( 1 )

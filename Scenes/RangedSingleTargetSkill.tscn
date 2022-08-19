@@ -158,6 +158,7 @@ polygon = PoolVector2Array( 31.4893, 0.857144, 7, 7, 7, -3 )
 texture = ExtResource( 1 )
 hframes = 8
 vframes = 8
+frame = 32
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Fire_E = SubResource( 1 )

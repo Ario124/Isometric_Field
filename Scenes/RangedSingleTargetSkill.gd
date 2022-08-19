@@ -1,14 +1,26 @@
 extends RigidBody2D
 
-var projectile_speed = 400
+var projectile_speed
 var life_time = 3
 var fire_direction
 var animation
 var damage = 10
-var skill_name = "Ice_Spear"
+var skill_name
 
 
 func _ready():
+	match skill_name:
+		"Fireball":
+			damage = 250
+			projectile_speed = 200
+		"Ice_Spear":
+			damage = 90
+			projectile_speed = 400
+	var skill_texture = load("res://Assets/Projectiles/" + skill_name + ".png")
+	get_node("Projectile").set_texture(skill_texture)
+	
+	
+	
 	apply_impulse(Vector2(), Vector2(projectile_speed, 0).rotated(rotation))
 	SelfDestruct()
 	SetAnimation()

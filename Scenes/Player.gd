@@ -47,6 +47,7 @@ func SkillLoop():
 	if Input.is_action_pressed("Shoot") and can_fire == true:
 		can_fire = false
 		shooting = true
+		speed = 0
 		fire_direction = (get_angle_to(get_global_mouse_position())/3.14)*180
 		get_node("TurnAxis").rotation = get_angle_to(get_global_mouse_position())
 		match selected_skill:
@@ -66,30 +67,10 @@ func SkillLoop():
 				skill_instance.position = get_global_mouse_position()
 				get_parent().add_child(skill_instance)
 				
-#		get_node("TurnAxis").rotation = get_angle_to(get_global_mouse_position())
-#		var skill_instance = spell.instance()
-#		skill_instance.position = get_node("TurnAxis/CastPoint").get_global_position()
-#		skill_instance.rotation = get_angle_to(get_global_mouse_position())
-#		fire_direction = (get_angle_to(get_global_mouse_position())/3.14)*180
-#		skill_instance.fire_direction = fire_direction
-#		get_parent().add_child(skill_instance)
-#		yield(get_tree().create_timer(rate_of_fire), "timeout")
-#		can_fire = true
-#		shooting = false
-
-#func LavaBomb():
-#	if Input.is_action_pressed("ShootLava") and can_fire == true:
-#		can_fire = false
-#		shooting2 = true
-#		get_node("TurnAxis").rotation = get_angle_to(get_global_mouse_position())
-#
-#		var skill_instance = lava_bomb.instance()
-#		skill_instance.position = get_global_mouse_position()
-#		get_parent().add_child(skill_instance)
-#		yield(get_tree().create_timer(rate_of_fire2), "timeout")
-#		can_fire = true
-#		shooting2 = false
-
+		yield(get_tree().create_timer(rate_of_fire), "timeout")
+		can_fire = true
+		shooting = false
+		speed = 200
 
 func OnHeal(heal_amount):
 	pass
