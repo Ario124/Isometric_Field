@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Resources/Walls.tres" type="TileSet" id=1]
 [ext_resource path="res://Resources/Floor.tres" type="TileSet" id=2]
@@ -18,7 +18,6 @@
 [ext_resource path="res://Scenes/Library/Barrels_E.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/UI/gray_bg.png" type="Texture" id=17]
 [ext_resource path="res://Scenes/GUI.gd" type="Script" id=18]
-[ext_resource path="res://Scenes/TestGUI.tscn" type="PackedScene" id=19]
 
 [node name="Node2D" type="Node2D"]
 
@@ -269,125 +268,130 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SkillBar" type="Control" parent="GUI"]
-visible = false
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -221.0
-margin_top = -77.0
-margin_right = -221.0
-margin_bottom = -77.0
+[node name="Skill_Bar" type="Control" parent="GUI"]
+margin_left = 350.0
+margin_top = 1000.0
+margin_right = 390.0
+margin_bottom = 1040.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="TextureRect" parent="GUI/SkillBar"]
-margin_right = 500.0
-margin_bottom = 66.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="Background" type="TextureRect" parent="GUI/Skill_Bar"]
+margin_right = 935.0
+margin_bottom = 81.0
 texture = ExtResource( 17 )
 expand = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="GUI/SkillBar/Background"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_right = -10.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SelectedSkill" type="TextureRect" parent="GUI/SkillBar/Background/HBoxContainer"]
-modulate = Color( 0.643137, 0.0470588, 0.0470588, 1 )
-self_modulate = Color( 0.913725, 0.0235294, 0.0235294, 1 )
-margin_bottom = 66.0
+[node name="Selected_Skill" type="TextureRect" parent="GUI/Skill_Bar/Background"]
+self_modulate = Color( 0.968627, 0, 0, 1 )
+margin_top = 10.0
+margin_right = 60.0
+margin_bottom = 70.0
+size_flags_vertical = 5
+texture = ExtResource( 17 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Skill_Bar/Background/Selected_Skill"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+
+[node name="Shortcut1" type="TextureRect" parent="GUI/Skill_Bar/Background"]
+self_modulate = Color( 0.670588, 0.494118, 0.494118, 1 )
+margin_left = 100.0
+margin_top = 10.0
+margin_right = 160.0
+margin_bottom = 70.0
 size_flags_vertical = 5
 texture = ExtResource( 17 )
 expand = true
 
-[node name="TextureRect" type="TextureRect" parent="GUI/SkillBar/Background/HBoxContainer/SelectedSkill"]
+[node name="TextureButton" type="TextureButton" parent="GUI/Skill_Bar/Background/Shortcut1" groups=["Shortcuts"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 expand = true
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="Shortcut1" type="TextureRect" parent="GUI/SkillBar/Background/HBoxContainer"]
-modulate = Color( 0.643137, 0.0470588, 0.0470588, 1 )
-self_modulate = Color( 0.913725, 0.0235294, 0.0235294, 1 )
-margin_left = 4.0
-margin_right = 4.0
-margin_bottom = 66.0
+[node name="Shortcut2" type="TextureRect" parent="GUI/Skill_Bar/Background"]
+self_modulate = Color( 0.670588, 0.494118, 0.494118, 1 )
+margin_left = 200.0
+margin_top = 10.0
+margin_right = 260.0
+margin_bottom = 70.0
 size_flags_vertical = 5
 texture = ExtResource( 17 )
-expand = true
-
-[node name="TextureButton" type="TextureButton" parent="GUI/SkillBar/Background/HBoxContainer/Shortcut1" groups=["Shortcuts"]]
-anchor_right = 1.0
-anchor_bottom = 1.0
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Shortcut2" type="TextureRect" parent="GUI/SkillBar/Background/HBoxContainer"]
-modulate = Color( 0.643137, 0.0470588, 0.0470588, 1 )
-self_modulate = Color( 0.913725, 0.0235294, 0.0235294, 1 )
-margin_left = 8.0
-margin_right = 8.0
-margin_bottom = 66.0
+[node name="TextureButton" type="TextureButton" parent="GUI/Skill_Bar/Background/Shortcut2" groups=["Shortcuts"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+
+[node name="Shortcut3" type="TextureRect" parent="GUI/Skill_Bar/Background"]
+self_modulate = Color( 0.670588, 0.494118, 0.494118, 1 )
+margin_left = 300.0
+margin_top = 10.0
+margin_right = 360.0
+margin_bottom = 70.0
 size_flags_vertical = 5
 texture = ExtResource( 17 )
 expand = true
 
-[node name="TextureButton" type="TextureButton" parent="GUI/SkillBar/Background/HBoxContainer/Shortcut2" groups=["Shortcuts"]]
+[node name="TextureButton" type="TextureButton" parent="GUI/Skill_Bar/Background/Shortcut3" groups=["Shortcuts"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Shortcut3" type="TextureRect" parent="GUI/SkillBar/Background/HBoxContainer"]
-modulate = Color( 0.643137, 0.0470588, 0.0470588, 1 )
-self_modulate = Color( 0.913725, 0.0235294, 0.0235294, 1 )
-margin_left = 12.0
-margin_right = 12.0
-margin_bottom = 66.0
+[node name="Shortcut4" type="TextureRect" parent="GUI/Skill_Bar/Background"]
+self_modulate = Color( 0.670588, 0.494118, 0.494118, 1 )
+margin_left = 400.0
+margin_top = 10.0
+margin_right = 460.0
+margin_bottom = 70.0
 size_flags_vertical = 5
 texture = ExtResource( 17 )
 expand = true
 
-[node name="TextureButton" type="TextureButton" parent="GUI/SkillBar/Background/HBoxContainer/Shortcut3" groups=["Shortcuts"]]
+[node name="TextureButton" type="TextureButton" parent="GUI/Skill_Bar/Background/Shortcut4" groups=["Shortcuts"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Shortcut4" type="TextureRect" parent="GUI/SkillBar/Background/HBoxContainer"]
-modulate = Color( 0.643137, 0.0470588, 0.0470588, 1 )
-self_modulate = Color( 0.913725, 0.0235294, 0.0235294, 1 )
-margin_left = 16.0
-margin_right = 16.0
-margin_bottom = 66.0
+[node name="Shortcut5" type="TextureRect" parent="GUI/Skill_Bar/Background"]
+self_modulate = Color( 0.670588, 0.494118, 0.494118, 1 )
+margin_left = 500.0
+margin_top = 10.0
+margin_right = 560.0
+margin_bottom = 70.0
 size_flags_vertical = 5
 texture = ExtResource( 17 )
 expand = true
 
-[node name="TextureButton" type="TextureButton" parent="GUI/SkillBar/Background/HBoxContainer/Shortcut4" groups=["Shortcuts"]]
+[node name="TextureButton" type="TextureButton" parent="GUI/Skill_Bar/Background/Shortcut5" groups=["Shortcuts"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="TestGUI" parent="." instance=ExtResource( 19 )]
-offset = Vector2( 50, 150 )
-transform = Transform2D( 1, 0, 0, 1, 50, 150 )
+[node name="Shortcut6" type="TextureRect" parent="GUI/Skill_Bar/Background"]
+self_modulate = Color( 0.670588, 0.494118, 0.494118, 1 )
+margin_left = 600.0
+margin_top = 10.0
+margin_right = 660.0
+margin_bottom = 70.0
+size_flags_vertical = 5
+texture = ExtResource( 17 )
+expand = true
+
+[node name="TextureButton" type="TextureButton" parent="GUI/Skill_Bar/Background/Shortcut6" groups=["Shortcuts"]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true

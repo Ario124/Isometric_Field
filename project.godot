@@ -17,6 +17,10 @@ config/icon="res://icon.png"
 
 Server="*res://Scenes/Singletons/Server.gd"
 
+[display]
+
+window/size/fullscreen=true
+
 [input]
 
 w={
