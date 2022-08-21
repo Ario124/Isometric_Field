@@ -16,6 +16,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Server="*res://Scenes/Singletons/Server.gd"
+DataImport="*res://Data/DataImport.gd"
 
 [display]
 
