@@ -50,8 +50,8 @@ func SkillLoop():
 		speed = 0
 		fire_direction = (get_angle_to(get_global_mouse_position())/3.14)*180
 		get_node("TurnAxis").rotation = get_angle_to(get_global_mouse_position())
-		match selected_skill:
-			"Fireball", "Ice_Spear":
+		match DataImport.skill_data[selected_skill].SkillType:
+			"RangedSingleTargetSkill":
 				var skill = load("res://Scenes/RangedSingleTargetSkill.tscn")
 				var skill_instance = skill.instance()
 				skill_instance.skill_name = selected_skill
@@ -60,7 +60,7 @@ func SkillLoop():
 				skill_instance.position = get_node("TurnAxis/CastPoint").get_global_position()
 				get_parent().add_child(skill_instance)
 				
-			"Lava_Bomb":
+			"RangedAOESkill":
 				var skill = load("res://Scenes/RangedAOESkill.tscn")
 				var skill_instance = skill.instance()
 				skill_instance.skill_name = selected_skill

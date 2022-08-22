@@ -9,13 +9,8 @@ var skill_name
 
 
 func _ready():
-	match skill_name:
-		"Fireball":
-			damage = 250
-			projectile_speed = 200
-		"Ice_Spear":
-			damage = 90
-			projectile_speed = 400
+	damage = DataImport.skill_data[skill_name].SkillDamage
+	projectile_speed = DataImport.skill_data[skill_name].ProjectileSpeed
 	var skill_texture = load("res://Assets/Projectiles/" + skill_name + ".png")
 	get_node("Projectile").set_texture(skill_texture)
 	

@@ -33,7 +33,6 @@ scale = Vector2( 1, 0.5 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-self_modulate = Color( 0.823529, 0.137255, 0.137255, 1 )
 texture = ExtResource( 1 )
 hframes = 3
 vframes = 4

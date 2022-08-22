@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 onready var hp_bar = get_node("HPBar")
 
-var max_hp = 200
+var max_hp = 500
 var current_hp
 var percentage_hp = 100
 var can_heal = true
