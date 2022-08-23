@@ -4,12 +4,13 @@ var projectile_speed
 var life_time = 3
 var fire_direction
 var animation
-var damage = 10
+var damage
 var skill_name
 
 
 func _ready():
-	damage = DataImport.skill_data[skill_name].SkillDamage
+	Server.FetchSkillDamage("Ice_Spear", get_instance_id())
+
 	projectile_speed = DataImport.skill_data[skill_name].ProjectileSpeed
 	var skill_texture = load("res://Assets/Projectiles/" + skill_name + ".png")
 	get_node("Projectile").set_texture(skill_texture)
@@ -20,6 +21,8 @@ func _ready():
 	SelfDestruct()
 	SetAnimation()
 
+func SetDamage(s_damage):
+	damage = s_damage
 
 func SetAnimation():
 	if fire_direction <= 15 and fire_direction >= -15:

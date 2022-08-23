@@ -18,3 +18,9 @@ func _OnConnectionFailed():
 
 func _OnConnectionSucceeded():
 	print("Succesfully connected")
+
+func FetchSkillDamage(skill_name, requester):
+	rpc_id(1, "FetchSkillDamage", skill_name, requester)
+	
+remote func ReturnSkillDamage(s_damage, requester):
+	instance_from_id(requester).SetDamage(s_damage)

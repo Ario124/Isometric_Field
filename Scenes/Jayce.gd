@@ -59,3 +59,5 @@ func OnDeath():
 	get_node("CollisionPolygon2D").set_deferred("disabled", true)
 	get_node("AnimationPlayer").play("Death_SW")
 	hp_bar.hide()
+	yield(get_tree().create_timer(3), "timeout")
+	z_index = -1
