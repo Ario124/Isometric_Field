@@ -23,6 +23,10 @@ var movement = Vector2()
 var attacking = false
 var attack_direction
 var selected_skill
+var skill_type
+
+
+
 
 func _unhandled_input(event):
 	if event.is_action_pressed('Click'):
@@ -43,6 +47,10 @@ func _process(delta):
 func _physics_process(delta):
 	MovementLoop()
 
+func SetType(s_type):
+	skill_type = s_type
+
+
 func SkillLoop():
 	if Input.is_action_pressed("Shoot") and can_fire == true:
 		can_fire = false
@@ -50,7 +58,12 @@ func SkillLoop():
 		speed = 0
 		fire_direction = (get_angle_to(get_global_mouse_position())/3.14)*180
 		get_node("TurnAxis").rotation = get_angle_to(get_global_mouse_position())
-		match DataImport.skill_data[selected_skill].SkillType:
+		
+		
+		### This part needs fixing -- need to match SkillType ?? double check
+		var skill_type = Server.FetchSkillType("Ice_Spear", get_instance_id())
+		match skill_type:
+#		match DataImport.skill_data[selected_skill].SkillType:
 			"RangedSingleTargetSkill":
 				var skill = load("res://Scenes/RangedSingleTargetSkill.tscn")
 				var skill_instance = skill.instance()

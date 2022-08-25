@@ -24,6 +24,8 @@ func _ready():
 func SetDamage(s_damage):
 	damage = s_damage
 
+
+
 func SetAnimation():
 	if fire_direction <= 15 and fire_direction >= -15:
 		animation = "Fire_E"
