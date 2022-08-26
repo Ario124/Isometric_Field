@@ -49,6 +49,7 @@ func _physics_process(delta):
 
 func SetType(s_type):
 	skill_type = s_type
+	print("Found: ", str(skill_type))
 
 
 func SkillLoop():
@@ -62,6 +63,8 @@ func SkillLoop():
 		
 		### This part needs fixing -- need to match SkillType ?? double check
 		var skill_type = Server.FetchSkillType("Ice_Spear", get_instance_id())
+		## Try debug with prints to get skill type! We are fetching Ice Spear instance.. need skilltype
+		print("Found: ", str(skill_type))
 		match skill_type:
 #		match DataImport.skill_data[selected_skill].SkillType:
 			"RangedSingleTargetSkill":
