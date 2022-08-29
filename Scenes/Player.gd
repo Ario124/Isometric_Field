@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 onready var animation_tree = get_node("AnimationTree")
-onready var animation_mode = get("parameters/playback")
+onready var animation_mode = animation_tree.get("parameters/playback")
 
 
 
@@ -36,6 +36,8 @@ func _unhandled_input(event):
 		moving = false
 		attacking = true
 		print(position.direction_to(get_global_mouse_position()).normalized())
+		animation_tree.set('parameters/Melee/blend_position', position.direction_to(get_global_mouse_position()).normalized())
+		animation_tree.set('parameters/Idle/blend_position', position.direction_to(get_global_mouse_position()).normalized())
 		Attack()
 
 func _process(delta):
@@ -91,6 +93,7 @@ func OnHeal(heal_amount):
 
 
 func Attack():
+	animation_mode.travel("Melee")
 	yield(get_tree().create_timer(0.4), "timeout")
 	attacking = false
 
@@ -101,10 +104,14 @@ func MovementLoop(delta):
 		speed += acceleration + delta
 		if speed > max_speed:
 			speed = max_speed
-	movement = position.direction_to(destination) * speed
+		movement = position.direction_to(destination) * speed
 	
-	if position.distance_to(destination) > 10:
-		movement = move_and_slide(movement)
-	else:
-		moving = false
+		if position.distance_to(destination) > 10:
+			movement = move_and_slide(movement)
+			animation_tree.set('parameters/Melee/blend_position', position.direction_to(get_global_mouse_position()).normalized())
+			animation_tree.set('parameters/Idle/blend_position', position.direction_to(get_global_mouse_position()).normalized())
+			animation_mode.travel("Walk")
+		else:
+			moving = false
+			animation_mode.travel("Idle")
 
