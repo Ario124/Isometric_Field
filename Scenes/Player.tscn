@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=72 format=2]
 
 [ext_resource path="res://Assets/Character/skeleton_mage_high.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=2]
@@ -638,11 +638,56 @@ animation = "Walk_W"
 [sub_resource type="AnimationNodeAnimation" id=45]
 animation = "Walk_E"
 
+[sub_resource type="AnimationNodeAnimation" id=59]
+animation = "Walk_E"
+
+[sub_resource type="AnimationNodeAnimation" id=60]
+animation = "Walk_W"
+
+[sub_resource type="AnimationNodeAnimation" id=61]
+animation = "Walk_E"
+
+[sub_resource type="AnimationNodeAnimation" id=62]
+animation = "Walk_S"
+
+[sub_resource type="AnimationNodeAnimation" id=63]
+animation = "Walk_N"
+
+[sub_resource type="AnimationNodeAnimation" id=64]
+animation = "Walk_N"
+
+[sub_resource type="AnimationNodeAnimation" id=65]
+animation = "Walk_S"
+
+[sub_resource type="AnimationNodeAnimation" id=70]
+animation = "Walk_S"
+
+[sub_resource type="AnimationNodeAnimation" id=71]
+animation = "Walk_N"
+
 [sub_resource type="AnimationNodeAnimation" id=46]
 animation = "Walk_S"
 
 [sub_resource type="AnimationNodeAnimation" id=47]
 animation = "Walk_N"
+
+[sub_resource type="AnimationNodeAnimation" id=55]
+animation = "Walk_W"
+
+[sub_resource type="AnimationNodeAnimation" id=56]
+animation = "Walk_N"
+
+[sub_resource type="AnimationNodeAnimation" id=57]
+animation = "Walk_E"
+
+[sub_resource type="AnimationNodeAnimation" id=58]
+animation = "Walk_S"
+
+[sub_resource type="AnimationNodeAnimation" id=66]
+animation = "Walk_N"
+
+[sub_resource type="AnimationNodeAnimation" id=67]
+animation = "Walk_S"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=48]
 blend_point_0/node = SubResource( 44 )
@@ -653,17 +698,47 @@ blend_point_2/node = SubResource( 46 )
 blend_point_2/pos = Vector2( 0, 1 )
 blend_point_3/node = SubResource( 47 )
 blend_point_3/pos = Vector2( 0, -1 )
+blend_point_4/node = SubResource( 55 )
+blend_point_4/pos = Vector2( -1, 0 )
+blend_point_5/node = SubResource( 56 )
+blend_point_5/pos = Vector2( 0, 1 )
+blend_point_6/node = SubResource( 57 )
+blend_point_6/pos = Vector2( 1, 0 )
+blend_point_7/node = SubResource( 58 )
+blend_point_7/pos = Vector2( 0, -1 )
+blend_point_8/node = SubResource( 66 )
+blend_point_8/pos = Vector2( 0, 1 )
+blend_point_9/node = SubResource( 67 )
+blend_point_9/pos = Vector2( 0, 1 )
+blend_point_10/node = SubResource( 59 )
+blend_point_10/pos = Vector2( 0, 1 )
+blend_point_11/node = SubResource( 60 )
+blend_point_11/pos = Vector2( -1, 0 )
+blend_point_12/node = SubResource( 61 )
+blend_point_12/pos = Vector2( 1, 0 )
+blend_point_13/node = SubResource( 62 )
+blend_point_13/pos = Vector2( 0, 1 )
+blend_point_14/node = SubResource( 63 )
+blend_point_14/pos = Vector2( 0, -1 )
+blend_point_15/node = SubResource( 64 )
+blend_point_15/pos = Vector2( 0, 1 )
+blend_point_16/node = SubResource( 65 )
+blend_point_16/pos = Vector2( 0, -1 )
+blend_point_17/node = SubResource( 70 )
+blend_point_17/pos = Vector2( 0, 1 )
+blend_point_18/node = SubResource( 71 )
+blend_point_18/pos = Vector2( 0, -1 )
 blend_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=51]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=52]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=53]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=54]
 switch_mode = 2
 auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=68]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=69]
 
 [sub_resource type="AnimationNodeStateMachine" id=49]
 states/Idle/node = SubResource( 38 )
@@ -672,7 +747,7 @@ states/Melee/node = SubResource( 43 )
 states/Melee/position = Vector2( 300, 195 )
 states/Walk/node = SubResource( 48 )
 states/Walk/position = Vector2( 378, 57 )
-transitions = [ "Idle", "Walk", SubResource( 51 ), "Walk", "Idle", SubResource( 52 ), "Idle", "Melee", SubResource( 53 ), "Melee", "Idle", SubResource( 54 ) ]
+transitions = [ "Idle", "Melee", SubResource( 53 ), "Melee", "Idle", SubResource( 54 ), "Idle", "Walk", SubResource( 68 ), "Walk", "Idle", SubResource( 69 ) ]
 start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=50]
@@ -742,6 +817,6 @@ tree_root = SubResource( 49 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 50 )
-parameters/Idle/blend_position = Vector2( 0.000823021, 0.00862074 )
-parameters/Melee/blend_position = Vector2( 0.0304527, -0.318966 )
-parameters/Walk/blend_position = Vector2( -0.071605, 0.258621 )
+parameters/Idle/blend_position = Vector2( 0, 0 )
+parameters/Melee/blend_position = Vector2( 0, 0 )
+parameters/Walk/blend_position = Vector2( 0, 0 )
